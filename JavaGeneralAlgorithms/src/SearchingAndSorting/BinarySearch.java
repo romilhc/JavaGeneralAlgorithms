@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class BinarySearch {
     
     //Recursive binary search
-    public int BinarySearchRecursive(int[] arr, int left, int right, int value) {
+    public int binarySearchRecursive(int[] arr, int left, int right, int value) {
         
         try {
             
@@ -28,11 +28,11 @@ public class BinarySearch {
                 }
                 //If value is on the left of middle element
                 else if(arr[mid] > value) {
-                    return BinarySearchRecursive(arr, left, mid - 1, value);
+                    return binarySearchRecursive(arr, left, mid - 1, value);
                 }
                 //If value is on the right of middle element
                 else if(arr[mid] < value) {
-                    return BinarySearchRecursive(arr, mid + 1, right, value);
+                    return binarySearchRecursive(arr, mid + 1, right, value);
                 }
                 
             }
@@ -47,7 +47,7 @@ public class BinarySearch {
     }
     
     //Recursive binary search
-    public int BinarySearchIterative(int[] arr, int left, int right, int value) {
+    public int binarySearchIterative(int[] arr, int left, int right, int value) {
         
         try {
             
@@ -89,7 +89,7 @@ public class BinarySearch {
         BinarySearch bs = new BinarySearch();
         
         //Testing recursive function
-        int resultIndex = bs.BinarySearchRecursive(arr,0,n-1,50);
+        int resultIndex = bs.binarySearchRecursive(arr,0,n-1,50);
         if(resultIndex == -1) {
             System.out.println("Value not found in an array");
         }
@@ -98,7 +98,7 @@ public class BinarySearch {
         }
 
         //Testing iterative function        
-        resultIndex = bs.BinarySearchIterative(arr, 0, n-1, 134);
+        resultIndex = bs.binarySearchIterative(arr, 0, n-1, 134);
         if(resultIndex == -1) {
             System.out.println("Value not found in an array");
         }
