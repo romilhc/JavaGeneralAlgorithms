@@ -16,7 +16,7 @@ public class BinarySearch {
     public int BinarySearchRecursive(int[] arr, int left, int right, int value) {
         
         if(left < right) {
-            
+            System.out.println("hello");
         }
         
         return -1;
