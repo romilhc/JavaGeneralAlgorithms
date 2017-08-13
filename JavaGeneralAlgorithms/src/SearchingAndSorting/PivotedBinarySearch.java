@@ -39,17 +39,22 @@ public class PivotedBinarySearch {
         
         while(left <= right) {
             
+            //Get middle element of the array 
             int mid = left + (right - left)/2;
             
+            //If pivot element is found except the last element as mid
             if(mid < right && arr[mid] > arr[mid+1]) {
                 return mid;
             }
+            //If pivot element is found except the first element as mid
             else if(mid > left && arr[mid-1] > arr[mid]) {
                 return (mid - 1);
             }
+            //If pivot is on the left of middle element
             else if(arr[left] >= arr[mid]) {
                 right = mid - 1;
             }
+            //If pivot is on the right of middle element
             else {
                 left = mid + 1;
             }
