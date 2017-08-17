@@ -12,7 +12,7 @@ package StringAndArray;
 public class ReverseStringWOAffectingSpecialCharacters {
     
     //Reverse a string without affecting special characters
-    public String ReverseString(String inputString) {
+    public String reverseString(String inputString) {
         
         //Create temporary array
         char[] temp = inputString.toCharArray();
@@ -48,7 +48,7 @@ public class ReverseStringWOAffectingSpecialCharacters {
         
         ReverseStringWOAffectingSpecialCharacters revStr = new ReverseStringWOAffectingSpecialCharacters();
         
-        String outputString = revStr.ReverseString(inputString);
+        String outputString = revStr.reverseString(inputString);
         System.out.println("Input String: " + inputString);
         System.out.println("Output String: " + outputString);
     }
