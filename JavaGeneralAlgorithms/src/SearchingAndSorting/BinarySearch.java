@@ -7,8 +7,8 @@ package SearchingAndSorting;
 import java.util.Arrays;
 
 /**
- *
  * @author Romil Chauhan
+ * Problem: http://www.geeksforgeeks.org/binary-search/
  */
 public class BinarySearch {
     
