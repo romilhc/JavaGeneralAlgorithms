@@ -407,7 +407,7 @@ public class BinaryTree {
     }
     
     // Check if tree is mirror image
-    public abstract boolean isMirror(Node root);
+    public boolean isMirror(Node root){return false;};
     
     // Make tree mirror image of itself
     public Node createMirror(Node root) {
