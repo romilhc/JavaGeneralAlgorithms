@@ -15,7 +15,7 @@ public class PivotedBinarySearch {
     public int pivotedBinarySearch(int[] arr, int left, int right, int value) {
         
         
-        int n = arr.length - 1, pivot = findPivot(arr, 0, n-1);
+        int n = arr.length - 1, pivot = findPivot(arr, 0, n);
         
         //Compare value with pivot's value and set left and right accordingly.
         if(pivot != -1) {
