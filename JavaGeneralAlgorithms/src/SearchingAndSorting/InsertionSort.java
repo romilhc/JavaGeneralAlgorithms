@@ -22,7 +22,7 @@ public class InsertionSort {
     }
     
     // Sort an array
-    public void sort(int[] arr) {
+    public void insertionSortIteratively(int[] arr) {
         
         int n = arr.length, key, j;
         
@@ -46,17 +46,39 @@ public class InsertionSort {
         
     }
     
+    // Sort an array recursively
+    public void insertionSortRecursively(int[] arr, int n) {
+        
+        if(n == 1) return;
+        
+        insertionSortRecursively(arr, n-1);
+        
+        int key = arr[n-1];
+        int j = n-2;
+        
+        while(j >= 0 && arr[j] > key) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        
+        arr[j+1] = key;
+        
+    }
+    
     //Main driver method
     public static void main(String args[]) {
         
-        int[] arr = {6, 1, 50, 2, 100, 6, 6101, 134, 411, 600};
-        int n = arr.length;
+        int[] arr1 = {6, 1, 50, 2, 100, 6, 6101, 134, 411, 600};
+        int[] arr2 = {20, 1, 6, 2, 100, 6, 6101, 134, 411, 600};
+        int n = arr1.length;
         
         InsertionSort bs = new InsertionSort();
         
-        bs.sort(arr);
+        bs.insertionSortIteratively(arr1);
+        System.out.println("Array: " + Arrays.toString(arr1));
         
-        System.out.println("Array: " + Arrays.toString(arr));
+        bs.insertionSortRecursively(arr2, n);
+        System.out.println("Array: " + Arrays.toString(arr2));
         
     }
 }

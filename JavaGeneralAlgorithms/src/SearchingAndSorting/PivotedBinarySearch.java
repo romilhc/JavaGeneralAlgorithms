@@ -5,6 +5,9 @@
  */
 package SearchingAndSorting;
 
+import java.util.Arrays;
+import java.util.TreeSet;
+
 /**
  * @author Romil Chauhan
  * Problem: http://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
@@ -66,13 +69,14 @@ public class PivotedBinarySearch {
     }
     
     //Main driver method
-    public static void main(String args[]) {
+    /*public static void main(String args[]) {
         
-        int[] arr = {6, 50, 100, 101, 134, 411, 600, 1, 2, 3};
-        int n = arr.length;
+        int[] arr = {6, 50, 100, 101, 134, 411, 600, 1};
+        int[] arr1 = {100, 1, 2, 3, 4, 5};
+        int n = arr1.length;
         
         PivotedBinarySearch pbs = new PivotedBinarySearch();
-        int resultIndex = pbs.pivotedBinarySearch(arr, 0, n-1, 6);
+        int resultIndex = pbs.pivotedBinarySearch(arr1, 0, n-1, 100);
     
         if(resultIndex == -1) {
             System.out.println("Value not found in an array");
@@ -81,9 +85,45 @@ public class PivotedBinarySearch {
             System.out.println("Value found at index: " + resultIndex);
         }
         
+    }*/
+    
+
+    public static void main (String[] args) throws java.lang.Exception
+    {
+            // your code goes here
+            int[] arr = new int[]{2,5,1,4,3};
+            int k = 2;
+            System.out.println(kEmptySlots(arr, k));
+
+    }
+	
+    public static int kEmptySlots(int[] flowers, int k) {
+        int[] days =  new int[flowers.length];
+        for(int i=0; i<flowers.length; i++)days[flowers[i] - 1] = i + 1;
+        int left = 0, right = k + 1, res = Integer.MAX_VALUE;
+        for(int i = 0; right < days.length; i++){
+            if(days[i] < days[left] || days[i] < days[right]){
+                if(i == right)res = Math.min(res, Math.max(days[left], days[right]));   //we get a valid subarray
+                left = i; 
+                right = k + 1 + i;
+                //System.out.println(right + " " + res + " " + left] + " " + days[right]);
+            }
+            
+        }
+        return (res == Integer.MAX_VALUE)?-1:res;
     }
     
+    /*public static String getNextTime(String s) {
+        
+        TreeSet<Integer> ts = new TreeSet<>();
+        
+        for(char c: s.toCharArray()) {
+            if(Character.isLetter(c))
+        }
+        
+    } */
 }
+
 
 /*
 OUTPUT:
